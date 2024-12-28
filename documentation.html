@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文档</title>
+    <title>插件文档</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,18 +23,19 @@
             <p>请按照以下步骤安装插件：</p>
             <ol>
                 <li>下载插件文件。</li>
-                <li>打开游戏，点击 <strong>Option &gt; Extensions &gt; Managing plugins</strong>，这会自动用文件管理器打开插件目录。</li>
-                <li>将插件文件解压到游戏插件目录。</li>
-                <li>重启游戏，插件将自动生效。</li>
+                <li>打开游戏，点击 <strong>Option &gt; Extensions &gt; Managing plugins</strong>，这将自动打开文件管理器并定位到插件目录。</li>
+                <li>将下载的插件文件解压到游戏插件目录。</li>
+                <li>重启游戏，插件将在游戏中自动生效。</li>
             </ol>
+            <p>完成这些步骤后，您就可以在游戏的插件管理页面查看并启用已安装的插件。</p>
         </section>
 
         <section>
             <h2>开发指南</h2>
-            <p>如果您想要开发自己的插件，以下是一些基础步骤和示例：</p>
+            <p>如果您希望开发自己的插件，以下是基本的创建和配置步骤：</p>
             <ol>
-                <li>创建一个插件文件夹，命名为您插件的名称（可以和插件名称不一样）。</li>
-                <li>在插件文件夹中创建一个 <code>plugin.json</code> 文件，放在项目根目录。</li>
+                <li>创建一个文件夹，命名为插件的名称（可以与插件名称不同）。</li>
+                <li>在插件文件夹中创建一个名为 <code>plugin.json</code> 的文件，并将其放置在项目根目录。</li>
                 <li>配置 <code>plugin.json</code> 文件的基本结构，如下所示：</li>
             </ol>
             
@@ -49,9 +50,11 @@
 }
             </code></pre>
             
-            <p>在 <code>plugin.json</code> 文件中，您可以为插件设置名称、版本、作者、描述和配置项。确保文件格式正确，且包含必要的信息。</p>
-            <p>现在我们就制作一个插件了，在游戏安装它，它应该就能显示在游戏Option &gt; Extensions的插件列表</p>
-            <h3>示例</h3>
+            <p>在 <code>plugin.json</code> 文件中，您可以为插件设置名称、版本、作者、描述以及其他配置项。确保文件格式正确并包含必要的字段。</p>
+            <p>完成此配置后，您就能将插件安装到游戏中，并在 <strong>Option &gt; Extensions</strong> 页面中看到它。</p>
+            
+            <h3>插件示例</h3>
+            <p>以下是一个插件配置示例：</p>
             <pre><code>
 {
     "plugin_name": "Sword Extension",
@@ -75,7 +78,7 @@
 }
             </code></pre>
 
-            <p>我们可以在 <code>configuration</code> 里注册插件包含的功能，并且我们可以让一个插件的 <code>configuration</code> 同时有 <code>object</code> 和 <code>item</code>。</p>
+            <p>在上面的示例中，<code>configuration</code> 中注册了插件所包含的物品（<code>item</code>）。您可以根据需要在配置中添加更多的功能项，甚至可以将 <code>configuration</code> 同时包含对象（<code>object</code>）和物品（<code>item</code>）列表。</p>
             
         </section>
     </main>
