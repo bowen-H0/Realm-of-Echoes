@@ -6,6 +6,7 @@
     <title>插件物品文档</title>
 </head>
 <body>
+    <!-- 页头 -->
     <header>
         <h1>插件物品文档</h1>
         <nav>
@@ -16,6 +17,7 @@
         </nav>
     </header>
 
+    <!-- 主内容 -->
     <main>
         <section>
             <h2>插件物品创建指南</h2>
@@ -26,6 +28,7 @@
                 <li>将物品贴图放置在 <code>A/item/</code> 文件夹中，贴图文件名应与 <code>json</code> 文件的 ID 相同（文件名：<code>ID+.png</code>）。</li>
             </ol>
 
+            <!-- 示例 1: 强化铁锭 -->
             <h3>示例 1：创建强化铁锭</h3>
             <p>这个示例展示了如何创建一个叫做“强化铁锭”的物品，它是通过合成两块铁锭和一颗蓝史莱姆球制作出来的。</p>
             <pre><code>
@@ -48,6 +51,7 @@
 }
             </code></pre>
 
+            <!-- 示例 2: 水晶碎片 -->
             <h3>示例 2：创建水晶碎片</h3>
             <p>这个示例展示了如何创建一个叫做“水晶碎片”的物品，它可以通过打怪掉落，掉落的怪物包括 AzureSkeleton 和 MysticStoneSentinel。</p>
             <pre><code>
@@ -67,6 +71,7 @@
 }
             </code></pre>
 
+            <!-- 示例 3: 星光剑 -->
             <h3>示例 3：创建星光剑</h3>
             <p>这个示例展示了如何创建一个叫做“星光剑”的武器，它由蓝宝石、铁锭和木材合成，并且具有额外的攻击属性。</p>
             <pre><code>
@@ -96,6 +101,7 @@
 }
             </code></pre>
 
+            <!-- 示例 4: 星雾剑 -->
             <h3>示例 4：创建星雾剑</h3>
             <p>这个示例展示了如何通过升级星光剑来创建一个新的武器“星雾剑”。</p>
             <pre><code>
@@ -105,7 +111,7 @@
     "description": "The blade is like starlight, gleaming with a faint glow, light and formless. It swings like the wind, silent in its deadly intent.",  <!-- 物品描述 -->
     "mod": "WeaponsUpgrade",  <!-- 物品的升级方式，指明通过升级现有武器来合成 -->
     "table": {  <!-- 升级所需的材料 -->
-        "Weapon":"Starlight",  <!-- 当前需要升级的武器 -->
+        "Weapon": "Starlight",  <!-- 当前需要升级的武器 -->
         "items": {  <!-- 需要的材料列表 -->
             "Platinum-Ingot": {
                 "Num": 1  <!-- 需要的铂金锭数量 -->
@@ -119,15 +125,43 @@
         }
     },
     "attack": {  <!-- 物品的攻击属性 -->
-        "Sharp":"(1,1)",  <!-- 锋利度 -->
-        "Fast":"(1,5)",  <!-- 攻击速度 -->
-        "Undead_killer":"(1,1)"  <!-- 对不死生物的额外伤害 -->
+        "Sharp": "(1,1)",  <!-- 锋利度 -->
+        "Fast": "(1,5)",  <!-- 攻击速度 -->
+        "Undead_killer": "(1,1)"  <!-- 对不死生物的额外伤害 -->
     }
 }
             </code></pre>
+
+            <!-- 配置插件示例 -->
+            <h3>插件配置示例</h3>
+            <p>然后我们在 <code>plugin.json</code> 的 <code>configuration</code> 中的 <code>item</code> 添加你新物品的ID。</p>
+            <pre><code>
+{
+    "plugin_name": "Sword Extension",
+    "version": 1.1,
+    "author": "Realm of Echoes",
+    "description": "Core extension",
+    "configuration": {
+        "item": [
+            "Enhanced-Iron-Ingot",
+            "Enhanced-Iron-Sword",
+            "Geargrinder",
+            "Star-Mist",
+            "Unyielding-Forged-Blade",
+            "Starlight",
+            "Pure-Gold-Sword",
+            "Crystal-Shard",
+            "Platinum-Sword-II",
+            "Chrome-longsword-II"
+        ]
+    }
+}
+            </code></pre>
+            <p>完成配置后，你可以将插件安装到游戏中，并在 <strong>选项 &gt; 扩展</strong> 页面查看。</p>
         </section>
     </main>
 
+    <!-- 页脚 -->
     <footer>
         <p>&copy; 2024 Realm of Echoes. All rights reserved.</p>
     </footer>
