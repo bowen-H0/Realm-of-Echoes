@@ -1,130 +1,130 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>插件物品文档</title>
+    <title>Plugin Item Documentation</title>
 </head>
 <body>
-    <!-- 页头 -->
+    <!-- Header -->
     <header>
-        <h1>插件物品文档</h1>
+        <h1>Plugin Item Documentation</h1>
         <nav>
             <ul>
-                <li><a href="index.html">主页</a></li>
-                <li><a href="documentation.html">文档</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 主内容 -->
+    <!-- Main Content -->
     <main>
         <section>
-            <h2>插件物品创建指南</h2>
-            <p>按照以下步骤创建插件物品：</p>
+            <h2>Plugin Item Creation Guide</h2>
+            <p>Follow the steps below to create a plugin item:</p>
             <ol>
-                <li>在项目中创建两个文件夹：<code>A</code> 和 <code>B</code>。<br> <code>A</code> 文件夹用于存放物品的贴图，<code>B</code> 文件夹用于存放物品的配置文件。</li>
-                <li>在 <code>B/item/</code> 文件夹中创建物品的 <code>json</code> 文件（文件名：<code>ID+.json</code>）。</li>
-                <li>将物品贴图放置在 <code>A/item/</code> 文件夹中，贴图文件名应与 <code>json</code> 文件的 ID 相同（文件名：<code>ID+.png</code>）。</li>
+                <li>Create two folders in the project: <code>A</code> and <code>B</code>. <br> The <code>A</code> folder is for item textures, and the <code>B</code> folder is for item configuration files.</li>
+                <li>Create the item's <code>json</code> file in the <code>B/item/</code> folder (filename: <code>ID+.json</code>).</li>
+                <li>Place the item texture in the <code>A/item/</code> folder, and the texture filename should match the <code>ID</code> in the <code>json</code> file (filename: <code>ID+.png</code>).</li>
             </ol>
 
-            <!-- 示例 1: 强化铁锭 -->
-            <h3>示例 1：创建强化铁锭</h3>
-            <p>这个示例展示了如何创建一个叫做“强化铁锭”的物品，它是通过合成两块铁锭和一颗蓝史莱姆球制作出来的。</p>
+            <!-- Example 1: Enhanced Iron Ingot -->
+            <h3>Example 1: Creating Enhanced Iron Ingot</h3>
+            <p>This example shows how to create an item called "Enhanced Iron Ingot", which is made by synthesizing two iron ingots and one blue slime ball.</p>
             <pre><code>
 {
-    "ID": "Enhanced-Iron-Ingot",  // 物品的唯一标识符
-    "type": "items",  // 物品的类型，这里是普通物品
-    "description": "A special type of iron, stronger and more durable than regular iron.",  // 物品的描述
-    "mod": "Synthesis_table",  // 物品的合成方式，指明通过合成台合成
-    "table": {  // 合成所需的材料
-        "Type": "items",  // 合成的物品类型
-        "items": {  // 具体合成物品的列表
+    "ID": "Enhanced-Iron-Ingot",  // Unique identifier for the item
+    "type": "items",  // Type of item, here it is a regular item
+    "description": "A special type of iron, stronger and more durable than regular iron.",  // Item description
+    "mod": "Synthesis_table",  // How the item is crafted, synthesized through a synthesis table
+    "table": {  // Materials needed for crafting
+        "Type": "items",  // Type of crafted item
+        "items": {  // List of specific items for crafting
             "Iron-Ingot": {
-                "Num": 2  // 需要的铁锭数量
+                "Num": 2  // Number of iron ingots needed
             },
             "BlueSlime-ball": {
-                "Num": 1  // 需要的蓝史莱姆球数量
+                "Num": 1  // Number of blue slime balls needed
             }
         }
     }
 }
             </code></pre>
 
-            <!-- 示例 2: 水晶碎片 -->
-            <h3>示例 2：创建水晶碎片</h3>
-            <p>这个示例展示了如何创建一个叫做“水晶碎片”的物品，它可以通过打怪掉落，掉落的怪物包括 AzureSkeleton 和 MysticStoneSentinel。</p>
+            <!-- Example 2: Crystal Shard -->
+            <h3>Example 2: Creating Crystal Shard</h3>
+            <p>This example shows how to create an item called "Crystal Shard", which can drop from monsters, including AzureSkeleton and MysticStoneSentinel.</p>
             <pre><code>
 {
-    "ID": "Crystal-Shard",  // 物品的唯一标识符
-    "type": "Items",  // 物品的类型，这里是普通物品
-    "description": "A sparkling shard of crystal, imbued with mystical energies. It is a key ingredient for crafting powerful weapons and enhancing gear.",  // 物品描述
-    "mod": "Drop",  // 物品掉落方式，指明通过怪物掉落
-    "table": {  // 掉落物品的设置
+    "ID": "Crystal-Shard",  // Unique identifier for the item
+    "type": "Items",  // Type of item, here it is a regular item
+    "description": "A sparkling shard of crystal, imbued with mystical energies. It is a key ingredient for crafting powerful weapons and enhancing gear.",  // Item description
+    "mod": "Drop",  // How the item is obtained, dropped by monsters
+    "table": {  // Drop settings
         "AzureSkeleton": [
-            {"scene": "Crystal-Shard", "rarity": 10}  // AzureSkeleton怪物掉落水晶碎片，掉落概率为10%
+            {"scene": "Crystal-Shard", "rarity": 10}  // AzureSkeleton drops crystal shard with a 10% chance
         ],
         "MysticStoneSentinel": [
-            {"scene": "Crystal-Shard", "rarity": 17}  // MysticStoneSentinel怪物掉落水晶碎片，掉落概率为17%
+            {"scene": "Crystal-Shard", "rarity": 17}  // MysticStoneSentinel drops crystal shard with a 17% chance
         ]
     }
 }
             </code></pre>
 
-            <!-- 示例 3: 星光剑 -->
-            <h3>示例 3：创建星光剑</h3>
-            <p>这个示例展示了如何创建一个叫做“星光剑”的武器，它由蓝宝石、铁锭和木材合成，并且具有额外的攻击属性。</p>
+            <!-- Example 3: Starlight Sword -->
+            <h3>Example 3: Creating Starlight Sword</h3>
+            <p>This example shows how to create a weapon called "Starlight Sword", crafted with sapphire, iron ingot, and wood, and with additional attack properties.</p>
             <pre><code>
 {
-    "ID": "Starlight",  // 物品的唯一标识符
-    "type": "Weapons",  // 物品的类型，这里是武器
-    "description": "A gorgeous and dazzling glowing sword, known for its agility and speed.",  // 物品描述
-    "mod": "Synthesis_table",  // 物品的合成方式，指明通过合成台合成
-    "table": {  // 合成所需的材料
-        "Type": "Weapons",  // 合成的物品类型
-        "items": {  // 具体合成物品的列表
+    "ID": "Starlight",  // Unique identifier for the item
+    "type": "Weapons",  // Type of item, here it is a weapon
+    "description": "A gorgeous and dazzling glowing sword, known for its agility and speed.",  // Item description
+    "mod": "Synthesis_table",  // How the item is crafted, synthesized through a synthesis table
+    "table": {  // Materials needed for crafting
+        "Type": "Weapons",  // Type of crafted item
+        "items": {  // List of specific items for crafting
             "Sapphire": {
-                "Num": 1  // 需要的蓝宝石数量
+                "Num": 1  // Number of sapphires needed
             },
             "Iron-Ingot": {
-                "Num": 1  // 需要的铁锭数量
+                "Num": 1  // Number of iron ingots needed
             },
             "Wood": {
-                "Num": 1  // 需要的木材数量
+                "Num": 1  // Number of wood pieces needed
             }
         }
     },
-    "attack": {  // 物品的攻击属性
+    "attack": {  // Attack properties of the item
         "Sharp": "(1,1)",
         "Fast": "(1,3)"
     }
 }
             </code></pre>
 
-            <!-- 示例 4: 星雾剑 -->
-            <h3>示例 4：创建星雾剑</h3>
-            <p>这个示例展示了如何通过升级星光剑来创建一个新的武器“星雾剑”。</p>
+            <!-- Example 4: Star Mist Sword -->
+            <h3>Example 4: Creating Star Mist Sword</h3>
+            <p>This example shows how to upgrade the Starlight Sword to create a new weapon called "Star Mist Sword".</p>
             <pre><code>
 {
-    "ID": "Star-Mist",  // 物品的唯一标识符
-    "type": "Weapons",  // 物品的类型，这里是武器
-    "description": "The blade is like starlight, gleaming with a faint glow, light and formless. It swings like the wind, silent in its deadly intent.",  // 物品描述
-    "mod": "WeaponsUpgrade",  // 物品的升级方式，指明通过升级现有武器来合成
-    "table": {  // 升级所需的材料
-        "Weapon": "Starlight",  // 当前需要升级的武器
-        "items": {  // 需要的材料列表
+    "ID": "Star-Mist",  // Unique identifier for the item
+    "type": "Weapons",  // Type of item, here it is a weapon
+    "description": "The blade is like starlight, gleaming with a faint glow, light and formless. It swings like the wind, silent in its deadly intent.",  // Item description
+    "mod": "WeaponsUpgrade",  // How the item is upgraded, through upgrading an existing weapon
+    "table": {  // Materials needed for upgrading
+        "Weapon": "Starlight",  // The weapon being upgraded
+        "items": {  // List of materials needed for upgrading
             "Platinum-Ingot": {
-                "Num": 1  // 需要的铂金锭数量
+                "Num": 1  // Number of platinum ingots needed
             },
             "Enhanced-Iron-Ingot": {
-                "Num": 2  // 需要的强化铁锭数量
+                "Num": 2  // Number of enhanced iron ingots needed
             },
             "Crystal-Shard": {
-                "Num": 2  // 需要的水晶碎片数量
+                "Num": 2  // Number of crystal shards needed
             }
         }
     },
-    "attack": {  // 物品的攻击属性
+    "attack": {  // Attack properties of the item
         "Sharp": "(1,1)",
         "Fast": "(1,5)",
         "Undead_killer": "(1,1)"
@@ -132,9 +132,9 @@
 }
             </code></pre>
 
-            <!-- 配置插件示例 -->
-            <h3>插件配置示例</h3>
-            <p>然后我们在 <code>plugin.json</code> 的 <code>configuration</code> 中的 <code>item</code> 添加你新物品的ID。</p>
+            <!-- Plugin Configuration Example -->
+            <h3>Plugin Configuration Example</h3>
+            <p>Then, add the ID of your new item to the <code>item</code> section of the <code>plugin.json</code> configuration.</p>
             <pre><code>
 {
     "plugin_name": "Sword Extension",
@@ -157,12 +157,12 @@
     }
 }
             </code></pre>
-            <p>如果"type"为"Weapons"，则需要包含"attack"键，其中"attack"中的"(1,1)"表示"(持续时间, 强度)"。</p>
-            <p>完成配置后，你可以将插件安装到游戏中，并在 <strong>选项 &gt; 扩展</strong> 页面查看。</p>
+            <p>If the "type" is "Weapons", the "attack" key is required, where "(1,1)" in the attack represents "(duration, strength)".</p>
+            <p>After configuration, you can install the plugin in the game and view it on the <strong>Options &gt; Extensions</strong> page.</p>
         </section>
     </main>
 
-    <!-- 页脚 -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Realm of Echoes. All rights reserved.</p>
     </footer>
