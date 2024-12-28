@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>插件文档</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">主页</a></li>
+                <li><a href="documentation.html">文档</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>安装指南</h2>
+            <p>请按照以下步骤安装插件：</p>
+            <ol>
+                <li>下载插件文件。</li>
+                <li>打开游戏，点击 <strong>Option &gt; Extensions &gt; Managing plugins</strong>，这会自动用文件管理器打开插件目录。</li>
+                <li>将插件文件解压到游戏插件目录。</li>
+                <li>重启游戏，插件将自动生效。</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>开发指南</h2>
+            <p>如果您想要开发自己的插件，以下是一些基础步骤和示例：</p>
+            <ol>
+                <li>创建一个插件文件夹，命名为您插件的名称（可以和插件名称不一样）。</li>
+                <li>在插件文件夹中创建一个 <code>plugin.json</code> 文件，放在项目根目录。</li>
+                <li>配置 <code>plugin.json</code> 文件的基本结构，如下所示：</li>
+            </ol>
+            
+            <pre><code>
+{
+    "plugin_name": "name",
+    "version": 1,
+    "author": "by",
+    "description": "description",
+    "configuration": {
+    }
+}
+            </code></pre>
+            <p>在 <code>plugin.json</code> 文件中，您可以为插件设置名称、版本、作者、描述和配置项。确保文件格式正确，且包含必要的信息。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Realm of Echoes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
