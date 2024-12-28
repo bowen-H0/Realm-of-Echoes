@@ -48,7 +48,34 @@
     }
 }
             </code></pre>
+            
             <p>在 <code>plugin.json</code> 文件中，您可以为插件设置名称、版本、作者、描述和配置项。确保文件格式正确，且包含必要的信息。</p>
+            
+            <h3>示例</h3>
+            <pre><code>
+{
+    "plugin_name": "Sword Extension",
+    "version": 1.1,
+    "author": "Realm of Echoes",
+    "description": "Core extension",
+    "configuration": {
+        "item":[
+            "Enhanced-Iron-Ingot",
+            "Enhanced-Iron-Sword",
+            "Geargrinder",
+            "Star-Mist",
+            "Unyielding-Forged-Blade",
+            "Starlight",
+            "Pure-Gold-Sword",
+            "Crystal-Shard",
+            "Platinum-Sword-II",
+            "Chrome-longsword-II"
+        ]
+    }
+}
+            </code></pre>
+
+            <p>我们可以在 <code>configuration</code> 里注册插件包含的功能，并且我们可以让一个插件的 <code>configuration</code> 同时有 <code>object</code> 和 <code>item</code>。</p>    
         </section>
     </main>
 
