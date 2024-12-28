@@ -1,3 +1,4 @@
 # Realm-of-Echoes
-WEB
+website
+
 https://quantnull.itch.io/realm-of-echoes
