@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>插件文档</title>
+    <title>Plugin Documentation</title>
 </head>
 <body>
     <header>
-        <h1>插件文档</h1>
+        <h1>Plugin Documentation</h1>
         <nav>
             <ul>
-                <li><a href="index.html">主页</a></li>
-                <li><a href="documentation.html">文档</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
-            <h2>安装指南</h2>
-            <p>请按照以下步骤安装插件：</p>
+            <h2>Installation Guide</h2>
+            <p>Please follow the steps below to install the plugin:</p>
             <ol>
-                <li>下载插件文件。</li>
-                <li>打开游戏，点击 <strong>Option &gt; Extensions &gt; Managing plugins</strong>，这将自动打开文件管理器并定位到插件目录。</li>
-                <li>将下载的插件文件解压到游戏插件目录。</li>
-                <li>重启游戏，插件将在游戏中自动生效。</li>
+                <li>Download the plugin file.</li>
+                <li>Open the game, click <strong>Option &gt; Extensions &gt; Managing plugins</strong>, which will automatically open the file manager and locate the plugin directory.</li>
+                <li>Extract the downloaded plugin file into the game’s plugin directory.</li>
+                <li>Restart the game, and the plugin will be automatically activated in the game.</li>
             </ol>
-            <p>完成这些步骤后，您就可以在游戏的插件管理页面查看并启用已安装的插件。</p>
+            <p>After completing these steps, you can view and enable the installed plugin in the game’s plugin management page.</p>
         </section>
 
         <section>
-            <h2>开发指南</h2>
-            <p>如果您希望开发自己的插件，以下是基本的创建和配置步骤：</p>
+            <h2>Development Guide</h2>
+            <p>If you wish to develop your own plugin, here are the basic steps for creating and configuring it:</p>
             <ol>
-                <li>创建一个文件夹，命名为插件的名称（可以与插件名称不同）。</li>
-                <li>在插件文件夹中创建一个名为 <code>plugin.json</code> 的文件，并将其放置在项目根目录。</li>
-                <li>配置 <code>plugin.json</code> 文件的基本结构，如下所示：</li>
+                <li>Create a folder and name it after the plugin (it doesn’t have to match the plugin name).</li>
+                <li>In the plugin folder, create a file named <code>plugin.json</code> and place it in the root directory of the project.</li>
+                <li>Configure the basic structure of the <code>plugin.json</code> file as follows:</li>
             </ol>
             
             <pre><code>
@@ -49,13 +49,11 @@
 }
             </code></pre>
             
-            <p>在 <code>plugin.json</code> 文件中，您可以为插件设置名称、版本、作者、描述以及其他配置项。确保文件格式正确并包含必要的字段。</p>
-            <p>完成此配置后，您就能将插件安装到游戏中，并在 <strong>Option &gt; Extensions</strong> 页面中看到它。</p>
-           
-           
+            <p>In the <code>plugin.json</code> file, you can set the plugin’s name, version, author, description, and other configuration items. Ensure that the file format is correct and contains the necessary fields.</p>
+            <p>Once configured, you can install the plugin into the game and see it on the <strong>Option &gt; Extensions</strong> page.</p>
             
-            <h3>插件示例</h3>
-            <p>以下是一个插件配置示例：</p>
+            <h3>Plugin Example</h3>
+            <p>Here is an example of a plugin configuration:</p>
             <pre><code>
 {
     "plugin_name": "Sword Extension",
@@ -79,11 +77,11 @@
 }
             </code></pre>
 
-            <p>在上面的示例中，<code>configuration</code> 中注册了插件所包含的物品（<code>item</code>）。您可以根据需要在配置中添加更多的功能项，甚至可以将 <code>configuration</code> 同时包含对象（<code>object</code>）和物品（<code>item</code>）列表。</p>
-            <h5>添加功能 </h5>
-            <p>在你的插件项目根目录创建一个"A"文件夹(Assets)和"B"文件夹(Behaviors)</p>
+            <p>In the example above, the <code>configuration</code> registers the items included in the plugin (<code>item</code>). You can add more features to the configuration as needed, and you can also include both objects (<code>object</code>) and items (<code>item</code>) in the <code>configuration</code> list.</p>
+            <h5>Adding Features</h5>
+            <p>Create an "A" folder (Assets) and a "B" folder (Behaviors) in your plugin project’s root directory.</p>
             <ol>
-                 <li><a href="Plugin-Documentation-item.html">创建物品</a></li>
+                <li><a href="Plugin-Documentation-item.html">Create Items</a></li>
             </ol>
         </section>
     </main>
