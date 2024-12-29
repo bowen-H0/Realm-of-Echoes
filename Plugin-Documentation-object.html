@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin Object Documentation</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Plugin Object Documentation</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Plugin Object Creation Guide</h2>
+            <p>Follow these steps to create a plugin object:</p>
+            <ol>
+                <li>
+                    Create two folders in your project: 
+                    <code>A</code> and <code>B</code>. <br>
+                    The <code>A</code> folder will store the object textures, and the <code>B</code> folder will store the object configuration files.
+                </li>
+                <li>
+                    In the <code>B/object/</code> folder, create a <code>json</code> configuration file for the object. The file naming format should be: <code>ID+.json</code>.
+                </li>
+                <li>
+                    In the <code>A/object/</code> folder, place the object texture files with the <code>.png</code> extension.
+                </li>
+            </ol>
+
+            <h3>Example JSON Configuration Files and Explanation</h3>
+            <pre><code>{
+    "ID": "Fallen_skeleton",            // Unique identifier for the object
+    "type": "Feature",                  // Object type; Feature refers to a scene object
+    "mod": "SimplePhysics",             // Physics module; available options: SimplePhysics, NoPhysics
+    "can_interactive": false,           // Whether the object is interactive (true means interactive)
+    "texture": "Fallen_skeleton",       // Texture file name (without extension)
+    "collision": "(20,64)",             // Collision box dimensions (in pixels)
+    "place": {                          // Object placement rules
+        "scene": "Fallen_skeleton",    // Scene name
+        "rarity": 10,                  // Rarity; higher value increases the probability of appearance
+        "map_name": ["dungeon", "castle"]
+    }
+}</code></pre>
+
+            <pre><code>{
+    "ID": "Goldframe_Apple",            // Unique identifier for the object
+    "type": "Feature",                  // Object type
+    "mod": "NoPhysics",                 // No physics effect
+    "can_interactive": false,           // Not interactive
+    "texture": "painting/Goldframe_Apple", // Path to the texture file
+    "collision": "(10,10)",             // Collision box size
+    "place": {                          // Object placement rules
+        "scene": "Goldframe_Apple",    // Scene name
+        "rarity": 1,                   // Rarity
+        "map_name": ["dungeon", "castle"]
+    }
+}</code></pre>
+
+            <pre><code>{
+    "ID": "Wooden_barrel",             // Unique identifier for the object
+    "type": "Feature",                 // Object type
+    "mod": "SimplePhysics",            // Use simple physics module
+    "can_interactive": true,           // Interactive
+    "texture": "Wooden_barrel",        // Initial texture file
+    "collision": "(20,30)",            // Collision box size
+    "place": {                          // Object placement rules
+        "scene": "Wooden_barrel",      // Scene name
+        "rarity": 22,                  // Rarity
+        "map_name": ["dungeon", "castle"]
+    },
+    "interactions": {                  // Interaction logic
+        "Drop": [                      // Items dropped upon interaction
+            {
+                "scene": "NULL",       // No items drop
+                "rarity": 100         // Probability weight
+            },
+            {
+                "scene": "Iron-Ingot", // Drop Iron Ingot
+                "rarity": 20          // Probability weight
+            },
+            {
+                "scene": "bone",      // Drop Bone
+                "rarity": 50          // Probability weight
+            }
+        ],
+        "coin": [0, 3, 5],             // Random coin drop (0, 3, or 5)
+        "After_interaction": {         // State after interaction
+            "state": "Opened",        // Change state to "Opened" (Original state allows infinite interactions)
+            "sound": "Score",         // Play "Score" sound effect
+            "texture": "Wooden_barrel_opened" // Replace texture after interaction, or use initial texture
+        }
+    }
+}</code></pre>
+
+          <p>The <code>map_name</code> key under the <code>place</code> object indicates where the object can spawn. Possible values are "dungeon", "castle", and "cave".</p>
+          <p>For the <code>texture</code>, use the path to the <code>.png</code> file in the <code>A/object/</code> folder, excluding the file extension. For example, if the texture file is located at <code>A/object/folder/Apple.png</code>, the texture field should be filled with <code>folder/Apple</code>.</p>
+          <p>Finally, add the object ID to the <code>plugin.json</code> configuration.</p>
+          
+          <h4>Example plugin.json:</h4>
+          <pre><code>{
+    "plugin_name": "Environment Extension",
+    "version": 1.0,
+    "author": "Realm of Echoes",
+    "description": "Core extension",
+    "configuration": {
+        "object": [
+            "Wooden_barrel",
+            "Fallen_skeleton",
+            "Skull_pile",
+            "Goldframe_Apple",
+            "Goldframe_Beetle",
+            "Goldframe_Cloud",
+            "Goldframe_Clouds_Long",
+            "Goldframe_Grass_Sunset",
+            "Goldframe_Lady_Bug",
+            "Goldframe_Sail_Boat",
+            "Goldframe_Sea_Scape",
+            "Goldframe_Coral",
+            "Goldframe_Star",
+            "Goldframe_Cottage_No_Animation",
+            "Goldframe_Sunset_Desert",
+            "Goldframe_Desert1",
+            "Goldframe_Tree",
+            "Goldframe_Grass_Clouds_Small",
+            "Goldframe_Tree_Scene",
+            "Goldframe_Grass_Field",
+            "Goldframe_Windmill"
+        ]
+    }
+}</code></pre>
+          <p>After configuring, you can install the plugin in the game and view it on the <strong>Options &gt; Extensions</strong> page.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Realm of Echoes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
