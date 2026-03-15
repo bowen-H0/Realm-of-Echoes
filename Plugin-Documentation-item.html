@@ -168,6 +168,31 @@
             
             <p>After configuration, you can install the plugin in the game and view it on the <strong>Options &gt; Extensions</strong> page.</p>
         </section>
+        <p>New features</p>
+        <code>
+            {
+{
+	"ID": "Elite-Crystal-Armor",
+	"type": "Armor",
+	"mod": "Synthesis_table",
+	"slot": "body",
+	"Rigidity": 10,
+	"Ductility": 160,
+	"Defense": 3,
+	"description": "Armor fused with Elite Crystal shards.",
+	"table": {
+		"Type": "Armor",
+		"items": {
+			"Elite-Crystal": { "Num": 2 },
+			"Platinum-Ingot": { "Num": 3 },
+			"Iron-Ingot":     { "Num": 4 },
+			"bone":           { "Num": 2 }
+		}
+	},
+	"on_hit_script": "res://Extension/Elite-Crystal-Extension/scripts/crystal_armor_on_hit.gd"
+}
+
+        </code>
     </main>
 
     <!-- Footer -->
